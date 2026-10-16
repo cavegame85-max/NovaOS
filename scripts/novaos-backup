@@ -1,0 +1,24 @@
+#!/bin/bash
+# NovaOS Backup Script
+# Копирует систему на HDD (/dev/sda3) в /opt/novaos
+
+set -e
+
+echo "==> Mounting HDD..."
+sudo mkdir -p /mnt/hdd
+sudo mount /dev/sda3 /mnt/hdd 2>/dev/null || true
+
+echo "==> Syncing NovaOS to HDD..."
+sudo rsync -aAXH --info=progress2 \
+  --exclude=/proc --exclude=/sys --exclude=/dev --exclude=/run \
+  --exclude=/tmp --exclude=/boot/efi --exclude=/mnt --exclude=/media \
+  --exclude=/lost+found \
+  / /mnt/hdd/opt/novaos/
+
+echo "==> Syncing disk cache..."
+sync
+
+echo "==> Unmounting HDD..."
+sudo umount /mnt/hdd
+
+echo "==> DONE! NovaOS backed up."

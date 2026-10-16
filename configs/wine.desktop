@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Wine Windows Program Loader
+Exec=wine %f
+Type=Application
+Terminal=false
+MimeType=application/x-ms-dos-executable;application/x-msdownload;application/x-msdos-program;
+Icon=wine
+Categories=System;

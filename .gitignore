@@ -1,0 +1,19 @@
+# Логи и временные файлы
+*.log
+*.tmp
+*.swp
+
+# Кэш и системные файлы
+.cache/
+.DS_Store
+Thumbs.db
+
+# Личные данные (не выкладываем)
+backup/
+personal/
+*.key
+*.pem
+
+# Бэкапы системы
+*.tar.gz
+*.tar.xz

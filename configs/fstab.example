@@ -1,0 +1,3 @@
+# <file system>                    <mount point>   <type>   <options>           <dump> <pass>
+UUID=REPLACE-WITH-YOUR-ROOT-UUID   /               ext4     errors=remount-ro   0      1
+UUID=REPLACE-WITH-YOUR-EFI-UUID    /boot/efi       vfat     umask=0077          0      1
